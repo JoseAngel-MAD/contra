@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'MontrealRegular', 'sans-serif';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.6;
+    padding: 0 0.5em;
+}
+
+.principal{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+h1{
+    color:darkcyan;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+.sub{
+    display: inline;
+    border-bottom: 7px solid aqua;
+}
+
+
+#cont{
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 1em;
+    
+}
+
+
+button{
+    display: inline-block;
+    padding: 1em 1.5em;
+    border: 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: bolder;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 2em;
+
+}
+
+
+button:focus, button:hover{
+    background-color:blue; 
+}
+
+
+.pie{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.5em;
+    cursor: pointer;
+    border-top: 3px solid aquamarine;
+    margin-top: 4em;
+    font-size: 0.9rem;
+    max-width: 800px;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@media (min-width: 500px) {
+
+    body{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+
+    h1{
+        font-size: 1.6rem;
+        
+    }
+    
+    .principal{
+        align-items: center;
+    }
+
+    #cont{
+        font-size: 1.4rem;
+        padding: 1em;
+        
+    }
+
+    button{
+        font-size: 1.2rem;
+        
+    }
+    
+    .pie{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+}
+
+
+@media (min-width: 800px){
+
+    body{
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .principal, .pie{
+        width: 90%;
+    }
+
+    h1{
+        font-size: 3rem;
+        margin-top: 1em;
+        padding: 0 3em;
+        
+    }
+    
+    #cont{
+        font-size: 1.9rem;
+        padding: 1em;
+        
+    }
+
+    button{
+        font-size: 1.8rem;
+        padding: 1em;
+
+    }
+    
+    .pie{
+        font-size: 1.5rem;
+        width: 50%;
+    }
+    
+
+}
