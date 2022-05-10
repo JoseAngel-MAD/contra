@@ -1,16 +1,11 @@
 const btn = document.getElementById('btn')
 const sp = document.getElementById('cont')
-const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890<>!"@#$%&/()=?¿¡[]{}-_,.'
+const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890<>!"@#$%&/()=?¿[]{}-_,.'
 let str = ''
 let noDisponibles = []
 let aleatorio
-const caracteresEspeciales = '<>!"@#$%&/()=?¿¡[]{}-_,.'.split('')
+let regEx = /(?=.*[^A-Za-z0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/
 
-function otraVez(){
-    str = ''
-    noDisponibles = []
-    generadora()
-}
 
 function caracteresAleatorios(){
 
@@ -26,27 +21,20 @@ function caracteresAleatorios(){
 }
 
 
-function tieneCarateresEspeciales(str){
-   for(let i = 0; i< str.length; i++){
-       if (caracteresEspeciales.includes(str[i])){
-           return true
-       }
-   } 
-}
-
 function generadora(){
     while (str.length < 16){
         str += caracteresAleatorios()
     }
 
-    if(tieneCarateresEspeciales(str)){
+    if(regEx.test(str)){ 
         return str
     }
-    else if(false || undefined){
-        otraVez()
+
+    else if(regEx.test(str) === false || undefined){
+        str = ''
+        noDisponibles = []
+        return generadora()
     }
-    
-    return str
 
 }
 
