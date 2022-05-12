@@ -47,7 +47,7 @@ btn.addEventListener('click', function(){
 
 
 
-cont.addEventListener('click', () => {
+sp.addEventListener('click', () => {
   if (document.selection) { 
     const range = document.body.createTextRange();
     range.moveToElementText(selectable);
