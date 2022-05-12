@@ -1,5 +1,5 @@
 const btn = document.getElementById('btn')
-const sp = document.getElementById('cont')
+const p = document.getElementById('cont')
 const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890<>!"@#$%&/()=?¿[]{}-_,.'
 let str = ''
 let noDisponibles = []
@@ -39,23 +39,22 @@ function generadora(){
 }
 
 btn.addEventListener('click', function(){
-    sp.style.backgroundColor = 'aquamarine'
-    sp.textContent = generadora()
+    p.style.backgroundColor = 'aquamarine'
+    p.textContent = generadora()
     str = ''
     noDisponibles = []    
 })
 
+p.addEventListener('click', () => {
+    if (document.selection) { 
+      const range = document.body.createTextRange();
+      range.moveToElementText(p);
+      range.select();
+    } else if (window.getSelection) {
+      const range = document.createRange();
+      range.selectNode(p);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+    }
+  })
 
-
-sp.addEventListener('click', () => {
-  if (document.selection) { 
-    const range = document.body.createTextRange();
-    range.moveToElementText(selectable);
-    range.select();
-  } else if (window.getSelection) {
-    const range = document.createRange();
-    range.selectNode(selectable);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-  }
-})
