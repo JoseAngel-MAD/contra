@@ -79,12 +79,7 @@ a{
     border-top: 4px solid aquamarine;
     padding-top: 0.7em;
 }
-
-
-footer{
-    text-align: center;
-}
-
+    
 
 @media (min-width: 400px) {
     
